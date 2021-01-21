@@ -93,11 +93,14 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
-   /*your code here*/
-}
+function addFlavor(string1, array){
+    const newFlavorArray = array.unshift(string1);
+   return newFlavorArray;
+   console.log (newFlavorArray);
+ }
+ console.log ("Rainbow Sherbert", originalFlavors);
 
-
+ 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array. 
 
