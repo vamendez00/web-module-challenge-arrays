@@ -83,12 +83,12 @@ Use the addFlavor function below to do the following:
     For example: addFlavor("Rainbow Sherbert", originalFlavors) should return the array ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"]
 */
 
-function addFlavor(newItem, array3){
+function addFlavor(array3, newItem){
     const newFlavors = array3.unshift(newItem);
     return array3;
 }
 
-addFlavor("Rainbow Sherbert", originalFlavors);
+addFlavor(originalFlavors, "Rainbow Sherbert");
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array. 
@@ -142,13 +142,11 @@ Use the removeFlavorByName function below to do the following:
 */
 
 function removeFlavorByName(array6, itemToLose){
-    for (let i=0; i< array6.length; i++){
-        if (array6[i].includes(itemToLose)){
-            return array6.splice(array6[i], 1);
-        }
-    }
+    let itemIndex = array6.indexOf(itemToLose);
+    let newArray = array6.splice(itemIndex,1);
+    return array6;
 }
-removeFlavorByName(originalFlavors, "Rocky Road")
+removeFlavorByName(originalFlavors, "Rocky Road");
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
