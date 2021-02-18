@@ -84,7 +84,7 @@ Use the addFlavor function below to do the following:
 */
 
 function addFlavor(array3, newItem){
-    const newFlavors = array3.unshift(newItem);
+    array3.unshift(newItem);
     return array3;
 }
 
@@ -102,7 +102,7 @@ Use the removeLastFlavor function below to do the following:
 */
 
 function removeLastFlavor(array4){
-   const new31Array = array4.pop();
+   array4.pop();
    return array4;
 }
 
@@ -143,7 +143,7 @@ Use the removeFlavorByName function below to do the following:
 
 function removeFlavorByName(array6, itemToLose){
     let itemIndex = array6.indexOf(itemToLose);
-    let newArray = array6.splice(itemIndex,1);
+    array6.splice(itemIndex,1);
     return array6;
 }
 removeFlavorByName(originalFlavors, "Rocky Road");
