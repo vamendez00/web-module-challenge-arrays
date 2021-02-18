@@ -103,9 +103,10 @@ Use the removeLastFlavor function below to do the following:
 
 function removeLastFlavor(array4){
    const new31Array = array4.pop();
-
+   return array4;
 }
 
+removeLastFlavor(originalFlavors);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -119,10 +120,11 @@ Use the getFlavorByIndex function below to do the following:
     For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
-    /*your code here*/
+function getFlavorByIndex(array5, i){
+    return array5[i];
 }
 
+getFlavorByIndex(originalFlavors, 2);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, 
@@ -139,10 +141,14 @@ Use the removeFlavorByName function below to do the following:
     HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-    /*your code here*/
+function removeFlavorByName(array6, itemToLose){
+    for (let i=0; i< array6.length; i++){
+        if (array6[i].includes(itemToLose)){
+            return array6.splice(array6[i], 1);
+        }
+    }
 }
-
+removeFlavorByName(originalFlavors, "Rocky Road")
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -165,10 +171,15 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-    /*your code here*/
+function filterByWord(array7, string){
+    const newFilteredArray = [];
+    for (let i=0; i< array7.length; i++){
+        if (array7[i].includes(string)){
+            newFilteredArray.push(array7[i]);
+        }
+    } return newFilteredArray;
 }
-
+filterByWord(originalFlavors, 'Chocolate');
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
