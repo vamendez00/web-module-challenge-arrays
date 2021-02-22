@@ -215,17 +215,49 @@ Baskin Robins now offers new flavors, seasonal flavors, and even regional flavor
 from originalFlavors, currentFlavors, seasonalFlavors, and regionalFlavors and store it in an array called randomFlavors.
 
 Use the getRandomFlavors function and new arrays below to do the following:
-    1. Receive the four arrays with all the differnet flavors (originalFlavors is above, the others are below)
+    1. Receive the four arrays with all the different flavors (originalFlavors is above, the others are below)
     2. Randomly pick flavors from all four arrays
-    3. Return a new array called randomFlavors that has a lenght of 31
+    3. Return a new array called randomFlavors that has a length of 31
 
     For example: getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors) might return ["Strawberry Cheesecake", "Eggnog,"..."Chocolate"].
 */
 
 
-function getRandomFlavors(/*code here*/){
-    /*code here*/
-}
+function getRandomFlavors(array1, array2, array3, array4){
+    let combinedFlavors = array1.concat(array2, array3, array4);
+    // console.log(combinedFlavors);
+    // console.log(combinedFlavors.length);
+  
+    // --------------------- Fisher-Yates (aka Knuth) Shuffle.----------------------//
+      function shuffle(array) {
+      var currentIndex = array.length, temporaryValue, randomIndex;
+  
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+      }
+      return array;
+    } 
+    // --------------------- END OF Fisher-Yates (aka Knuth) Shuffle.----------------------//  
+    
+    let combinedShuffle = shuffle(combinedFlavors);
+    // console.log(combinedShuffle);
+    // console.log(combinedShuffle.length);
+    
+    let limitedMenu = combinedShuffle.splice(1, 31);
+    console.log(limitedMenu);
+    // console.log(limitedMenu.length);
+  }
+    
+  getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors) ;
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
 const newFlavors = [
